@@ -18,3 +18,5 @@ git remote add origin <https://github.com/gohugotr/wpclone.git>
 git branch -M master
 git push -u origin master
 ```
+
+`yarn add antd @ant-design/icons`
