@@ -3,7 +3,7 @@ import ToggleTheme from "../components/ToggleTheme"
 function Home() {
   return (
     <>
-      <div>Home</div>
+      <h2>Home</h2>
       <ToggleTheme />
     </>
   )

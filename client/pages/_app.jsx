@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css'
+
 import { ThemeProvider } from '../context/theme'
 import React from 'react'
 
