@@ -1,4 +1,3 @@
-
 import { ThemeProvider } from '../context/theme'
 import React from 'react'
 
