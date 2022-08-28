@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import AdminNav from "../nav/AdminNav";
 
-const { Sider, Content } = Layout;
+const { Content } = Layout;
 
 
 const AdminLayout = ({children}) => {

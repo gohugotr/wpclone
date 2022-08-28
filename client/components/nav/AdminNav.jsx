@@ -3,12 +3,10 @@ import {
   ContainerOutlined,
   DesktopOutlined,
   MailOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   PieChartOutlined,
 } from '@ant-design/icons'
-import { Button, Menu } from 'antd'
 import React, { useState } from 'react'
+import { Layout, Menu } from 'antd'
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -37,6 +35,8 @@ const items = [
   ]),
 ]
 
+const { Sider } = Layout
+
 const AdminNav = () => {
   const [collapsed, setCollapsed] = useState(false)
 
@@ -45,20 +45,7 @@ const AdminNav = () => {
   }
 
   return (
-    <div
-      style={{
-        width: 256,
-      }}
-    >
-      <Button
-        type='primary'
-        onClick={toggleCollapsed}
-        style={{
-          marginBottom: 16,
-        }}
-      >
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
+    <Sider collapsible>
       <Menu
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1', 'sub2']}
@@ -67,7 +54,7 @@ const AdminNav = () => {
         inlineCollapsed={collapsed}
         items={items}
       />
-    </div>
+    </Sider>
   )
 }
 
