@@ -1,8 +1,11 @@
+import AdminLayout from "../../components/layout/AdminLayout"
+
 const Admin = () => {
   return (
-    <div>
+    <AdminLayout>
       <h1>Admin Panel</h1>
-    </div>
+      <p>Merhaba</p>
+    </AdminLayout>
   )
 }
 
