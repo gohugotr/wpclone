@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons'
 import React, { useState } from 'react'
 import { Layout, Menu } from 'antd'
+import Link from 'next/link'
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -19,20 +20,85 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('Option 3', '3', <ContainerOutlined />),
-  getItem('Navigation One', 'sub1', <MailOutlined />, [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Option 7', '7'),
-    getItem('Option 8', '8'),
+  getItem(
+    <Link href='/admin'>
+      <a>Dashboard</a>
+    </Link>,
+    '1',
+    <PieChartOutlined />
+  ),
+  getItem('Posts', 'sub1', <MailOutlined />, [
+    getItem(
+      <Link href='/admin/posts'>
+        <a>All Posts</a>
+      </Link>,
+      '2',
+      <DesktopOutlined />
+    ),
+    getItem(
+      <Link href='/admin/posts/new'>
+        <a>Add New</a>
+      </Link>,
+      '3',
+      <ContainerOutlined />
+    ),
+    getItem(
+      <Link href='/admin/categories'>
+        <a>Categories</a>
+      </Link>,
+      '4',
+      <ContainerOutlined />
+    ),
   ]),
-  getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
-    getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
+  getItem('Media', 'sub2', <MailOutlined />, [
+    getItem(
+      <Link href='/admin/media/library'>
+        <a>Library</a>
+      </Link>,
+      '5'
+    ),
+    getItem(
+      <Link href='/admin/media/new'>
+        <a>Add New</a>
+      </Link>,
+      '6'
+    ),
   ]),
+  getItem(
+    <Link href='/admin/comments'>
+      <a>Comments</a>
+    </Link>,
+    '7',
+    <DesktopOutlined />
+  ),
+  getItem('Users', 'sub3', <MailOutlined />, [
+    getItem(
+      <Link href='/admin/users'>
+        <a>All Users</a>
+      </Link>,
+      '8'
+    ),
+    getItem(
+      <Link href='/admin/users/new'>
+        <a>Add New</a>
+      </Link>,
+      '9'
+    ),
+  ]),
+  getItem(
+    <Link href='/admin/userid'>
+      <a>Profile</a>
+    </Link>,
+    '10',
+    <AppstoreOutlined />
+  ),
+  getItem(
+    <Link href='/admin/customize'>
+      <a>Customize</a>
+    </Link>,
+    '11',
+    <AppstoreOutlined />
+  ),
 ]
 
 const { Sider } = Layout
@@ -47,10 +113,10 @@ const AdminNav = () => {
   return (
     <Sider collapsible>
       <Menu
+        style={{ height: '100vh' }}
         defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1', 'sub2']}
+        defaultOpenKeys={['sub1', 'sub2', 'sub3']}
         mode='inline'
-        theme='dark'
         inlineCollapsed={collapsed}
         items={items}
       />
