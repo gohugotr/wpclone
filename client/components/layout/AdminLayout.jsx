@@ -7,11 +7,11 @@ const { Sider, Content } = Layout;
 const AdminLayout = ({children}) => {
     return (
       <Layout>
-        <AdminNav/>
+       <AdminNav/>
         <Layout>
-          <Content>
+          <Content >
             {children}
-          </Content>
+          </Content> 
         </Layout>
       </Layout>
     )
