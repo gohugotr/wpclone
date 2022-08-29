@@ -24,3 +24,30 @@ git push -u origin master
 `yarn add react-helmet`
 
 `yarn add @react-hook/window-size`
+
+`yarn add kaloraat`
+
+`mkdir server & cd server`
+
+`../node_modules/kaloraat/auth/bin/index.js`
+
+**Seçimlik**
+
+## controller ve route oluşturmak için `kaloraat-make-route`
+
+`../node_modules/kaloraat/route/bin/index.js`
+
+## model oluşturmak için `kaloraat-make-model`
+
+`../node_modules/kaloraat/model/bin/index.js`
+**Seçimlik**
+
+`yarn`
+
+`yarn add nodemon`
+
+`yarn start`
+
+`http://localhost:8000/api`
+
+
