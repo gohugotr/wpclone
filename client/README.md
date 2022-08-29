@@ -49,5 +49,3 @@ git push -u origin master
 `yarn start`
 
 `http://localhost:8000/api`
-
-
