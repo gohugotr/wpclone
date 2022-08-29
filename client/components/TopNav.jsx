@@ -6,7 +6,7 @@ import ToggleTheme from './ToggleTheme'
 
 const TopNav = () => {
   return (
-    <Menu mode='horizontal' defaultSelectedKeys={['cms']}>
+    <Menu mode='horizontal' defaultSelectedKeys={['toogle']} theme='dark'>
       <Menu.Item key='cms' icon={<MailOutlined />}>
         <Link href='/'>
           <a>CMS</a>

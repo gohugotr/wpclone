@@ -14,10 +14,10 @@
   "description": "",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@react-hook/window-size": "^3.0.7",
     "antd": "^4.22.7",
     "next": "^12.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-dom": "^18.2.0"
   }
 }

@@ -1,16 +1,15 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../context/theme'
-//import Head from 'next/head'
-import {Helmet} from 'react-helmet'
+import Head from 'next/head'
 
 const ToggleTheme = () => {
   const [theme, setTheme] = useContext(ThemeContext) // theme değerini yakalıyoruz
 
   return (
     <>
-      <Helmet>
+      <Head>
         <link rel='stylesheet' href={`/css/${theme}.css`} />
-      </Helmet>
+      </Head>
       {theme === 'light' ? (
         <span
           onClick={() => {

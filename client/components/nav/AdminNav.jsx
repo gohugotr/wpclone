@@ -17,6 +17,8 @@ import React, { useState, useEffect } from 'react'
 import { Layout, Menu } from 'antd'
 import Link from 'next/link'
 
+import { useWindowWidth } from '@react-hook/window-size'
+
 const { Sider } = Layout
 
 const getItem = (label, key, icon, children, type) => {
@@ -34,11 +36,21 @@ const AdminNav = () => {
 
   const [current, setCurrent] = useState('')
 
+  const onlyWidth = useWindowWidth()
+
   useEffect(() => {
     process.browser && setCurrent(window.location.pathname)
   }, [process.browser && window.location.pathname])
 
   const activeName = (name) => `${current === name && 'active'}`
+
+  useEffect(() => {
+    if (onlyWidth < 800) {
+      setCollapsed(true)
+    } else if (onlyWidth > 800) {
+      setCollapsed(false)
+    }
+  }, [onlyWidth < 800])
 
   const items = [
     getItem(
@@ -126,12 +138,18 @@ const AdminNav = () => {
     ),
   ]
 
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed)
-  }
+  // const toggleCollapsed = () => {
+  //   setCollapsed(!collapsed)
+  // }
 
   return (
-    <Sider collapsible>
+    <Sider
+      collapsible
+      collapsed={collapsed}
+      onCollapse={() => {
+        setCollapsed(!collapsed) // Manuel collepse edebilmek için
+      }}
+    >
       <Menu
         style={{ height: '100vh' }}
         //defaultSelectedKeys={['1']}
