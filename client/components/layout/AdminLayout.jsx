@@ -1,19 +1,17 @@
-import { Layout } from "antd";
-import AdminNav from "../nav/AdminNav";
+import { Layout } from 'antd'
+import AdminNav from '../nav/AdminNav'
 
-const { Content } = Layout;
+const { Content } = Layout
 
-const AdminLayout = ({children}) => {
-    return (
+const AdminLayout = ({ children }) => {
+  return (
+    <Layout>
+      <AdminNav />
       <Layout>
-       <AdminNav/>
-        <Layout>
-          <Content style={{padding:'1em'}}>
-            {children}
-          </Content> 
-        </Layout>
+        <Content style={{ padding: '1em' }}>{children}</Content>
       </Layout>
-    )
+    </Layout>
+  )
 }
 
 export default AdminLayout
