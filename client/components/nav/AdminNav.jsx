@@ -4,13 +4,13 @@ import {
   DesktopOutlined,
   UserSwitchOutlined,
   UserOutlined,
+  UserAddOutlined,
   PushpinOutlined,
   SettingOutlined,
   CameraOutlined,
   CommentOutlined,
   BgColorsOutlined,
   FileAddOutlined,
-  UserAddOutlined,
   UploadOutlined,
 } from '@ant-design/icons'
 import React, { useState, useEffect } from 'react'
