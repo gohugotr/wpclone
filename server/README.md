@@ -21,3 +21,22 @@
 `brew services start mongodb-community@6.0`
 
 `brew services list`
+
+**MongoDB'yi Bağlayın ve Kullanın**
+`mongosh`
+
+**Veritabanlarını listele** ==> `db`
+
+### [Yeni veritabanı oluştur](https://www.mongodb.com/docs/mongodb-shell/run-commands/)
+
+`use myNewDatabase`
+`db.myCollection.insertOne( { x: 1 } );`
+
+**Örnek (cmd altında yazılır) -- Use insertOne, insertMany, or bulkWrite**
+`db.user.insertOne({name:'Ali', email:'tera@gg.com', password:'A345'})`
+
+**Örnek -- Kayıtları Listele**
+`db.user.find({})`
+
+**Örnek -- Kayıtları Sil**
+`db.user.remove({})`
