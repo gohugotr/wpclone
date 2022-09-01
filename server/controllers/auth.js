@@ -10,7 +10,7 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_KEY);
 
 export const signup = async (req, res) => {
-  console.log("HIT SIGNUP");
+  //console.log("HIT SIGNUP");
   try {
     // validation
     const { name, email, password } = req.body;
