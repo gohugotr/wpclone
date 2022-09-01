@@ -3,7 +3,7 @@ import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input, Row, Col } from 'antd'
 import Link from 'next/link'
 import axios from 'axios'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 
 const Signup = () => {
   const onFinish = async (values) => {
@@ -27,8 +27,6 @@ const Signup = () => {
     <Row>
       <Col span={8} offset={8}>
         <h1 style={{ paddingTop: '100px' }}>SignUp</h1>
-
-        <Toaster/>
 
         <Form
           name='normal_login'
