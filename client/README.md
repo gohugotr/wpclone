@@ -51,3 +51,5 @@ git push -u origin master
 `http://localhost:8000/api`
 
 `yarn add react-hot-toast axios`
+
+**`if (data && data.error)` bu ifadeyle `if(data?.error)` aynıdır.**

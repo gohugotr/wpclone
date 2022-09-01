@@ -9,9 +9,11 @@ const Signup = () => {
   const onFinish = async (values) => {
     // console.log('Received values of form: ', values)
     try {
-      const res = await axios.post('http://localhost:8000/api/signup', values)
+      const { data } = await axios.post('http://localhost:8000/api/signup', values)
 
-      console.log('res =>', res)
+      //console.log('data =>', data)
+      if (data && data.error)
+
     } catch (error) {
       toast.error('Signup başarısız oldu. Try again')
       console.log(error)
