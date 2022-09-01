@@ -46,6 +46,8 @@ export const signup = async (req, res) => {
         password: hashedPassword,
       }).save()
 
+      console.log('Kullanıcı kaydedildi', user)
+
       // create signed token
       const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
         expiresIn: '7d',
