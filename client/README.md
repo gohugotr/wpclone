@@ -49,3 +49,5 @@ git push -u origin master
 `yarn start`
 
 `http://localhost:8000/api`
+
+`yarn add react-hot-toast axios`
