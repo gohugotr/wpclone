@@ -2,11 +2,21 @@ import React from 'react'
 import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input, Row, Col } from 'antd'
 import Link from 'next/link'
+import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast'
 
-const SignUp = () => {
-    const onFinish = (values) => {
-      console.log('Received values of form: ', values)
+const Signup = () => {
+  const onFinish = async (values) => {
+    // console.log('Received values of form: ', values)
+    try {
+      const res = await axios.post('http://localhost:8000/api/signup', values)
+
+      console.log('res =>', res)
+    } catch (error) {
+      toast.error('Signup başarısız oldu. Try again')
+      console.log(error)
     }
+  }
   return (
     <Row>
       <Col span={8} offset={8}>
@@ -29,10 +39,7 @@ const SignUp = () => {
               },
             ]}
           >
-            <Input
-              prefix={<UserOutlined className='site-form-item-icon' />}
-              placeholder='Name'
-            />
+            <Input prefix={<UserOutlined className='site-form-item-icon' />} placeholder='Name' />
           </Form.Item>
 
           {/* E-mail */}
@@ -116,4 +123,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Signup
