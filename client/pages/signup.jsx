@@ -12,7 +12,11 @@ const Signup = () => {
       const { data } = await axios.post('http://localhost:8000/api/signup', values)
 
       //console.log('data =>', data)
-      if (data && data.error)
+      if (data?.error){
+        toast.error(data.error)
+      } else {
+        toast.success('Kullanıcı başarıyla kaydedildi.')
+      }
 
     } catch (error) {
       toast.error('Signup başarısız oldu. Try again')
@@ -23,6 +27,9 @@ const Signup = () => {
     <Row>
       <Col span={8} offset={8}>
         <h1 style={{ paddingTop: '100px' }}>SignUp</h1>
+
+        <Toaster/>
+
         <Form
           name='normal_login'
           className='login-form'
