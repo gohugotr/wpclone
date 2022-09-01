@@ -38,5 +38,35 @@
 **Örnek -- Kayıtları Listele**
 `db.user.find({})`
 
+`db.user.find({ email:'tera@gg.com' });`
+
+**Örnek Sonuç**
+
+```js script
+wpDatabase> db.user.find({ email:'tera@gg.com' });
+[
+  {
+    _id: ObjectId("6311001e12c83dd8f6f1f37b"),
+    name: 'Cengiz',
+    email: 'tera@gg.com',
+    password: 'B2215'
+  }
+]
+```
+
 **Örnek -- Kayıtları Sil**
 `db.user.remove({})`
+
+`db.user.remove({ email:'tera@gg.com'  });`
+
+[**MongoDB Komutları**](https://www.mongodb.com/docs/manual/reference/method/)
+
+`deleteOne, deleteMany, findOneAndDelete, or bulkWrite` ==> **Silme komutları**
+
+`show tables` ==> **Tabloları listeler**
+
+`db.users.drop()`  ==> **users tablosunu siler**
+
+`help`
+
+`show dbs`

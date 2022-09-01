@@ -102,17 +102,21 @@ export const signin = async (req, res) => {
 
 export const forgotPassword = async (req, res) => {
   const { email } = req.body
+
   // find user by email
   const user = await User.findOne({ email })
   console.log('USER ===> ', user)
   if (!user) {
     return res.json({ error: 'User not found' })
   }
+
   // generate code
   const resetCode = nanoid(5).toUpperCase()
+
   // save to db
   user.resetCode = resetCode
   user.save()
+
   // prepare email
   const emailData = {
     from: process.env.EMAIL_FROM,
