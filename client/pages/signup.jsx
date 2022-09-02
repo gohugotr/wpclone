@@ -1,26 +1,49 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons'
 import { Button, Checkbox, Form, Input, Row, Col } from 'antd'
 import Link from 'next/link'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { AuthContext } from '../context/auth'
+import { useRouter } from 'next/router'
 
 const Signup = () => {
+  // state
+  const [loading, setLoading] = useState(false)
+
+  // context
+  const [auth, setAuth] = useContext(AuthContext)
+
+  //route
+  const router = useRouter()
+
   const onFinish = async (values) => {
     // console.log('Received values of form: ', values)
+    setLoading(true)
     try {
       const { data } = await axios.post('http://localhost:8000/api/signup', values)
 
       //console.log('data =>', data)
-      if (data?.error){
+      if (data?.error) {
         toast.error(data.error)
+        setLoading(false)
       } else {
-        toast.success('Kullanıcı başarıyla kaydedildi.')
-      }
+        // context'e kaydet
+        setAuth(data)
 
+        // local storage'ye kaydeder.
+        localStorage.setItem('auth', JSON.stringify(data))
+
+        toast.success('Kullanıcı başarıyla kaydedildi.')
+        setLoading(false)
+
+        // redirect
+        router.push('/admin')
+      }
     } catch (error) {
       toast.error('Signup başarısız oldu. Try again')
       console.log(error)
+      setLoading(false)
     }
   }
   return (
@@ -115,7 +138,12 @@ const Signup = () => {
 
           {/* SignUp Button */}
           <Form.Item>
-            <Button type='primary' htmlType='submit' className='login-form-button'>
+            <Button
+              type='primary'
+              htmlType='submit'
+              className='login-form-button'
+              loading={loading}
+            >
               Signup
             </Button>
             <br />
