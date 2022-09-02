@@ -7,15 +7,15 @@ import toast from 'react-hot-toast'
 import { AuthContext } from '../context/auth'
 import { useRouter } from 'next/router'
 
-const Signup = () => {
-  // state
-  const [loading, setLoading] = useState(false)
 
+
+const Signup = () => {
   // context
   const [auth, setAuth] = useContext(AuthContext)
-
-  //route
+  //router
   const router = useRouter()
+  // state
+  const [loading, setLoading] = useState(false)
 
   const onFinish = async (values) => {
     // console.log('Received values of form: ', values)
@@ -30,7 +30,6 @@ const Signup = () => {
       } else {
         // context'e kaydet
         setAuth(data)
-
         // local storage'ye kaydeder.
         localStorage.setItem('auth', JSON.stringify(data))
 
