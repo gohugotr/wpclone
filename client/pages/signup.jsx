@@ -7,8 +7,6 @@ import toast from 'react-hot-toast'
 import { AuthContext } from '../context/auth'
 import { useRouter } from 'next/router'
 
-
-
 const Signup = () => {
   // context
   const [auth, setAuth] = useContext(AuthContext)
