@@ -19,7 +19,12 @@ const Signup = () => {
     // console.log('Received values of form: ', values)
     setLoading(true)
     try {
-      const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/signup`, values)
+      //  const { data } = await axios.post('http://localhost:8000/api/signup', values)
+      //  const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API}/signup`, values)
+
+      // client/context/auth.jsx AuthProvider fonksiyonunda axios için base_url ayarlandı.
+      // Böylece url kısaldı.
+      const { data } = await axios.post('/signup', values)
 
       //console.log('data =>', data)
       if (data?.error) {
