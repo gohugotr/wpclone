@@ -60,6 +60,13 @@ const AdminNav = () => {
       '1',
       <SettingOutlined />
     ),
+    getItem(
+      <Link href='/admin/notlar'>
+        <a className={activeName('/admin/notlar')}>Notlar</a>
+      </Link>,
+      '1',
+      <SettingOutlined />
+    ),
     getItem('Posts', '2', <PushpinOutlined />, [
       getItem(
         <Link href='/admin/post'>

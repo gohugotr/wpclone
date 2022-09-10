@@ -42,7 +42,7 @@ const TopNav = () => {
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
-      <Menu.Item key='toogle'>
+      <Menu.Item key='toggle'>
         <ToggleTheme />
       </Menu.Item>
     </Menu>

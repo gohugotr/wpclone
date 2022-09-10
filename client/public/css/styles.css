@@ -2,3 +2,18 @@
     text-decoration: underline;
     color: #1890ff !important;
 }
+
+.not {
+    background-color: #222f3e;
+    border: 2px solid black;
+    padding:3px;
+    margin: 0 auto;
+    width: 200px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color:blanchedalmond;
+    gap:10px;
+}
